@@ -45,5 +45,17 @@ class ViewController: UIViewController {
         alert.addAction(buttonCancel)
         present(alert, animated: true, completion: nil)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // Alert
+        let alert_1:UIAlertController=UIAlertController(title: "Welcome to Image Gallery", message: "Please enter your name", preferredStyle: UIAlertController.Style.alert)
+        // Alert text field
+        alert_1.addTextField(configurationHandler: nil)
+        // Alert action
+        let button_1:UIAlertAction=UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert_1.addAction(button_1)
+        // Present
+        present(alert_1, animated: true, completion: nil)
+    }
 }
 
