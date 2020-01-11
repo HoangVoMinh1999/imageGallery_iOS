@@ -50,9 +50,14 @@ class ViewController: UIViewController {
         // Alert
         let alert_1:UIAlertController=UIAlertController(title: "Welcome to Image Gallery", message: "Please enter your name", preferredStyle: UIAlertController.Style.alert)
         // Alert text field
-        alert_1.addTextField(configurationHandler: nil)
+        alert_1.addTextField { (nameTextField) in
+            nameTextField.placeholder="Your name"
+        }
         // Alert action
-        let button_1:UIAlertAction=UIAlertAction(title: "Ok", style: .default, handler: nil)
+        let button_1:UIAlertAction=UIAlertAction(title: "Confirm", style: .default) { (button_1) in
+            let name=alert_1.textFields![0]
+            print(name)
+        }
         alert_1.addAction(button_1)
         // Present
         present(alert_1, animated: true, completion: nil)
