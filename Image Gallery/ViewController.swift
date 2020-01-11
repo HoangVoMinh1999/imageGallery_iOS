@@ -36,5 +36,14 @@ class ViewController: UIViewController {
         }
         imageView.image=UIImage(named: listImage[index])
     }
+    
+    @IBAction func notiButton(_ sender: Any) {
+        let alert:UIAlertController = UIAlertController(title: "Art Gallery", message: "Hello", preferredStyle: UIAlertController.Style.alert)
+        let buttonOK:UIAlertAction=UIAlertAction(title: "OK", style: UIAlertAction.Style.destructive, handler: nil)
+        let buttonCancel:UIAlertAction=UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(buttonOK)
+        alert.addAction(buttonCancel)
+        present(alert, animated: true, completion: nil)
+    }
 }
 
