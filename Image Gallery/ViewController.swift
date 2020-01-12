@@ -10,13 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
     
     var listImage=["image1","image2","image3","image4"]
     var index=0
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image=UIImage(named: listImage[index])
-        // Do any additional setup after loading the view.
+        nameLabel.text=""
+        
     }
     @IBAction func backButton(_ sender: Any) {
         if (index==0){
@@ -38,7 +40,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func notiButton(_ sender: Any) {
-        let alert:UIAlertController = UIAlertController(title: "Art Gallery", message: "Hello", preferredStyle: UIAlertController.Style.alert)
+        let alert:UIAlertController = UIAlertController(title: "Art Gallery", message: "Hello", preferredStyle: UIAlertController.Style.actionSheet)
         let buttonOK:UIAlertAction=UIAlertAction(title: "OK", style: UIAlertAction.Style.destructive, handler: nil)
         let buttonCancel:UIAlertAction=UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(buttonOK)
@@ -55,8 +57,8 @@ class ViewController: UIViewController {
         }
         // Alert action
         let button_1:UIAlertAction=UIAlertAction(title: "Confirm", style: .default) { (button_1) in
-            let name=alert_1.textFields![0]
-            print(name)
+            let name:String=alert_1.textFields![0].text!
+            self.nameLabel.text = "Hello: \(name)"
         }
         alert_1.addAction(button_1)
         // Present
