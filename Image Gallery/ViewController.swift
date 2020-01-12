@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var colorSlider: UISlider!
+    @IBOutlet weak var lightSwitch: UISwitch!
+    
     
     var listImage=["image1","image2","image3","image4"]
     var index=0
@@ -55,6 +57,17 @@ class ViewController: UIViewController {
         view.backgroundColor=UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: CGFloat(colorSlider!.value))
         
     }
+    
+    
+    @IBAction func lightSwitchAction(_ sender: UISwitch) {
+        if (lightSwitch.isOn==true){
+            view.backgroundColor=UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        }
+        else{
+            view.backgroundColor=UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.0)
+        }
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         // Alert
         let alert_1:UIAlertController=UIAlertController(title: "Welcome to Image Gallery", message: "Please enter your name", preferredStyle: UIAlertController.Style.alert)
