@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var colorSlider: UISlider!
     
     var listImage=["image1","image2","image3","image4"]
     var index=0
@@ -18,7 +19,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         imageView.image=UIImage(named: listImage[index])
         nameLabel.text=""
-        
+        //---Setting slider
+        colorSlider.maximumValue=100
+        colorSlider.minimumValue=0
+        colorSlider.maximumTrackTintColor=UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
+        colorSlider.minimumTrackTintColor=UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)
     }
     @IBAction func backButton(_ sender: Any) {
         if (index==0){
@@ -48,6 +53,10 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func colorSldAction(_ sender: UISlider) {
+        
+        
+    }
     override func viewDidAppear(_ animated: Bool) {
         // Alert
         let alert_1:UIAlertController=UIAlertController(title: "Welcome to Image Gallery", message: "Please enter your name", preferredStyle: UIAlertController.Style.alert)
