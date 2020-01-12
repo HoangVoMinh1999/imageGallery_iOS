@@ -22,8 +22,6 @@ class ViewController: UIViewController {
         //---Setting slider
         colorSlider.maximumValue=100
         colorSlider.minimumValue=0
-        colorSlider.maximumTrackTintColor=UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
-        colorSlider.minimumTrackTintColor=UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)
     }
     @IBAction func backButton(_ sender: Any) {
         if (index==0){
@@ -54,7 +52,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func colorSldAction(_ sender: UISlider) {
-        
+        view.backgroundColor=UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: CGFloat(colorSlider!.value))
         
     }
     override func viewDidAppear(_ animated: Bool) {
